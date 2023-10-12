@@ -1,6 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 .opciones{
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-family: 'Varela Round', sans-serif;
     font-weight: bolder;
 }
 
@@ -8,5 +12,22 @@
     margin-right: 20px;
 }
 .navbar-brand.mx-auto {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 75px;
+}
+#parrafo{
+    font-family: 'Varela Round', sans-serif;
+    
+    font-size: 20px;
+}
+#titulo_inicio{
+    font-family: 'Caveat Brush', cursive;
+    font-size: 100px;
+}
+.fondo{
+    background-image: url("/static/fondo.jpg");
+}
+.subtitulo{
+    font-family: 'Varela Round', sans-serif;
+    color: rgb(44, 43, 43);
 }

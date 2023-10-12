@@ -8,9 +8,11 @@ bcrypt = Bcrypt(app)
 @app.route('/login')
 def registro():
 
-    if 'peliqueria' in session:
+    if 'peluqueria' in session:
+        session['usuario_id'] = id
         flash("ya estás LOGEADO!!!! eres " + session['usuario']['email'], "info")
-        return redirect("/")
+        
+        return redirect("/inicio")
 
     return render_template("login.html")
 
@@ -27,7 +29,7 @@ def procesar_login():
     
     if resultado:
         session['usuario_id']=usuario.id
-        return redirect("/")
+        return redirect("/inicio")
 
     flash("la contraseña o el correo no es válido", "error")
     return redirect("/login")

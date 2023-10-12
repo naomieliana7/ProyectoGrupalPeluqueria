@@ -3,8 +3,11 @@ from flask_app import app
 from flask_app.models.usuario import Usuario
 
 
-
 @app.route('/')
+def portada():
+    return render_template('portada.html')
+
+@app.route('/inicio')
 def inicio():
     
     if not session.get('usuario_id'):

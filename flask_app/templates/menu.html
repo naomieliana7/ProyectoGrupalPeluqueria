@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-    <a class="navbar-brand fs-2 fw-bold mx-auto" href="/">MiSalon {{user_in_session.nombre_peluqueria}}</a>
+    <a class="navbar-brand fs-2 fw-bold mx-auto" href="/">MiSalon: {{user_in_session.nombre_peluqueria}}</a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
         <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
                 <a class="nav-link opciones" href="/clientes/{{user_in_session.id}}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link opciones" href="/servicios/{{user_in_session.id}}">Servicios</a>
+                <a class="nav-link opciones" href="/servicios">Servicios</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link opciones" href="/reservas">Reservas</a>

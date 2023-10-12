@@ -13,7 +13,7 @@ def procesar_servicio():
     if len(errores) > 0:
         for error in errores:
             flash(error, "error")
-        return redirect("/")
+        return redirect("/inicio")
 
     data = {
         'nombre_servicio': request.form["nombre_servicio"],
@@ -38,8 +38,8 @@ def nuevo():
     return render_template('nuevo_servicio.html', user_in_session=user_in_session)
 
 
-@app.route('/servicios/<id>')
-def servicios(id):
+@app.route('/servicios')
+def servicios():
     print('HHHHHHHH')
     servicios = Servicio.get_all_servicios()
     user_in_session = Usuario.get(session['usuario_id'])
