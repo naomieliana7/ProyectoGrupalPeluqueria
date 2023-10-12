@@ -47,37 +47,6 @@ def clientes(id):
     user_in_session = Usuario.get(session['usuario_id'])
     return render_template('clientes.html', clientes=clientes, user_in_session=user_in_session)
 
-
-@app.route('/editar_cliente/<id>')
-def editar(id):
-    user_in_session = Usuario.get(session['usuario_id'])
-    cliente = Cliente.get_cliente(id)
-    return render_template('editar_cliente.html', cliente=cliente, user_in_session=user_in_session)
-
-@app.route('/procesar_cliente_editar/<id>', methods=["POST"])
-def procesar_cliente_editar(id):
-    print(request.form)
-    print('EDITAR')
-    errores = Cliente.validar_cliente(request.form)
-    if len(errores) > 0:
-        for error in errores:
-            flash(error, "error")
-        return redirect("/")
-    cliente = Cliente.get_cliente(id)
-
-    cliente.nombre_apellido = request.form['nombre_apellido']
-    cliente.direccion = request.form['direccion']
-    cliente.telefono = request.form['telefono']
-    cliente.correo = request.form['correo']
-
-    cliente.update_cliente()
-    
-    flash( "Datos del cliente editados", "success")
-
-    return redirect("/clientes/<id>")
-
-
-
 @app.route('/eliminar/<id>')
 def eliminar(id):
     Cliente.eliminar_cliente(id)

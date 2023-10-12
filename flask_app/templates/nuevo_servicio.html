@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block estilos %}
+{% endblock %}
+
+{% block menu %}
+{% include 'menu.html' %}
+{% endblock %}
+
+{% block contenido %}
+
+<div class="row">
+    <div class="col-6">
+        <h3>Añadir Servicio</h3>
+        <hr>
+        <form action="/procesar_servicio" method="post">
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Nombre del Servicio</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="nombre_servicio" name="nombre_servicio" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Precio del Servicio</label>
+                </div>
+                <div class="col-9">
+                    <input type="number" id="precio" name="precio" class="form-control" min="1">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                </div>
+                <div class="col-9">
+                    <button class="btn btn-primary" type="submit">Añadir</button>
+                </div>
+            </div>
+        </form>
+        
+
+    </div>
+</div>
+
+{% endblock %}
