@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% endblock %}
+
+{% block estilos %}
+{% endblock %}
+
+
+
+{% block contenido %}
+
+<div class="row">
+    <div class="col-6">
+        {{session.usuario}}
+        <h3>REGISTRO</h3>
+        <hr>
+        <form action="/procesar_registro" method="post">
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Nombre del Local: </label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="nombre_peluqueria" name="nombre_peluqueria" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Dirección: </label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="direccion" name="direccion" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Email: </label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="email" name="email" class="form-control">
+                </div>
+            </div>
+            
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Contraseña</label>
+                </div>
+                <div class="col-9">
+                    <input type="password" id="password" name="password" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Confirmar Contraseña</label>
+                </div>
+                <div class="col-9">
+                    <input type="password" id="confirmar_password" name="confirmar_password" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                </div>
+                <div class="col-9">
+                    <button class="btn btn-primary" type="submit">Registrar!!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-6">
+        <h3>LOGIN</h3>
+        <hr>
+        <form action="/procesar_login" method="post">
+            <div class="row g-3 align-items-center">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Email</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="email" name="email" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Contraseña</label>
+                </div>
+                <div class="col-9">
+                    <input type="password" id="password" name="password" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-3">
+                <div class="col-3">
+                </div>
+                <div class="col-9">
+                    <button class="btn btn-primary" type="submit">LOGIN!!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
